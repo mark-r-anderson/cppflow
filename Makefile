@@ -13,7 +13,7 @@ standard:
 
 	g++ -Wall -std=c++11 -c -fPIC -I$(TF_INCLUDE_PATH) -I$(CPPFLOW_INCLUDE_PATH) -L$(TF_LIBRARY_PATH) $(CPPFLOW_DIR)/src/Model.cpp -o $(CPPFLOW_LIBRARY_PATH)/Model.o -l$(TF_LIBRARY)
 
-	g++ -Wall -std=c++11 -shared $(CPPFLOW_LIBRARY_PATH)/Tensor.o $(CPPFLOW_LIBRARY_PATH)/Model.o -o $(CPPFLOW_LIBRARY_PATH)/lib$(CPPFLOW_LIB).so -Wl,--whole-archive -I$(TF_INCLUDE_PATH) -L$(TF_LIBRARY_PATH) -l$(TF_LIBRARY) -Wl,--no-whole-archive
+	g++ -Wall -std=c++11 -shared $(CPPFLOW_LIBRARY_PATH)/Tensor.o $(CPPFLOW_LIBRARY_PATH)/Model.o -o $(CPPFLOW_LIBRARY_PATH)/lib$(CPPFLOW_LIB).so
 
 clean:
 	rm -f $(CPPFLOW_LIBRARY_PATH)/Tensor.o $(CPPFLOW_LIBRARY_PATH)/Model.o $(CPPFLOW_LIBRARY_PATH)/lib$(CPPFLOW_LIB).so
